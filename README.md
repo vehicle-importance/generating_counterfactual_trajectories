@@ -47,4 +47,66 @@ Setup LAV adapted for Counterfactual Reasoning from [here](https://github.com/pr
 
 ## Generating True and Counterfactual Trajectories
 
+Start the Carla Server
+
+``` bash
+./<path_to_carla>/CarlaUE4.sh
+
+```
+
+To generate the conterfactual trajectories and extract the sensor data run:
+
+``` bash
+python start_replaying.py -f ./recordings/RouteScenario_<route_id>_rep0.log --route-id <route_id>
+
+``` 
+
+The data would be recorded in `./saved_data`. The directory structure of saved_data is as follows:
+
+```
+saved_data
+└── 2
+    ├── data
+    │   ├── 1.npy
+    │   ├── 2.npy
+    │   .
+    │   .
+    ├── og
+    │   ├── bev
+    │   │   ├── 1.png
+    │   │   ├── 2.png
+    │   │   .
+    │   │   .
+    │   ├── bev_unmarked
+    │   │   ├── 1.png
+    │   │   ├── 2.png
+    └── recording_data
+        ├── bev_projected
+        │   ├── projected_1.png
+        │   ├── projected_2.png
+        │   .
+        │   .
+        └── data
+            ├── 1.npy
+            ├── 2.npy
+            .
+            .
+├── 9
+.
+.
+└── 31
+```
+
+2, 9, 14, 19, 24, 31 are route-ids for the selected routes from the longest6 benchmark. The `./saved_data/data` directory contains the counterfactual trajectory generated after removing the objects in the scene.
+
+The `./saved_data/og` directory contains the unmarked bev images in the `./saved_data/og/bev_unmarked` directory and the annotated frames with counterfactual trajectories in the `./saved_data/og/bev` directory.
+
+The `./saved_data/recording_data/bev_projected` directory contains the annotated frames with counterfactual trajectories for the velocity perturbation scores where the trajectories are forecast using a constant velocity model.
+
+The `./saved_data/recording_data/data` directory contains the perturbed and unperturbed vehicle trajectories forecast using a constant velocity model.
+
+## Evaluation
+
+For evaluation refer this [repository](https://github.com/vehicle-importance/oiecr).
+
 ## Citation (Coming Soon)
