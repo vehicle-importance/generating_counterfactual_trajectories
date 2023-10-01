@@ -17,7 +17,7 @@ This repository provides code for the following paper:
 # Content
 * [Setup](#setup)
 * [Download Simulation Recordings](#download-simulation-recordings)
-* [Generating True and Counterfactual Trajectories](#generating-true-and-counterfactual-trajectories-coming-soon)
+* [Generating True and Counterfactual Trajectories](#generating-true-and-counterfactual-trajectories)
 * [Citation *(Coming Soon)*]()
 
 
