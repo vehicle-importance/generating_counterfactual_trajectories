@@ -2,7 +2,7 @@
 
 
 **News**: \
-**28.09.2023:** We released the code to generate the counterfactual trajectories.
+**28.09.2023:** We released the code to generate the counterfactual trajectories. \
 **22.09.2023:** We released the code to reproduce the results in the paper, [here](https://github.com/vehicle-importance/oiecr).
 
 
@@ -35,10 +35,9 @@ cd generating_counterfactual_trajectories
 chmod +x setup_carla.sh
 ./setup_carla.sh
 
-# 3. Setup LAV adapted for Counterfactual Reasoning. 
-Refer [here](https://github.com/pranaygupta36/LAV)
 ```
 
+Setup LAV adapted for Counterfactual Reasoning from [here](https://github.com/pranaygupta36/LAV)
 
 ## Download Simulation Recordings 
 
